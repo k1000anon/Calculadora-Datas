@@ -30,7 +30,7 @@
         }
 
         input, button {
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             font-size: 16px;
             width: 100%;
@@ -79,6 +79,37 @@
             text-align: center;
         }
 
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Menos espaço nas bordas */
+            }
+
+            .container {
+                padding: 15px; /* Menos padding no container */
+            }
+
+            input, button {
+                font-size: 14px; /* Fonte menor para inputs e botões */
+                padding: 10px; /* Menor padding para ajustar melhor */
+            }
+
+            h1 {
+                font-size: 24px; /* Tamanho de fonte ajustado para dispositivos móveis */
+            }
+
+            h2 {
+                font-size: 20px; /* Reduzido para boa legibilidade em telas pequenas */
+            }
+
+            table, th, td {
+                font-size: 14px; /* Fonte menor para a tabela */
+            }
+
+            footer {
+                font-size: 10px; /* Fonte reduzida no rodapé */
+            }
+        }
     </style>
 </head>
 <body>
@@ -121,9 +152,10 @@
     </div>
 
     <footer>
-        k1000 <br> <br>
-01/01/2025
-</br> <br>
+        <br><br>
+        <b>k1000 <br> <br>
+        01/01/2025
+        </b>
     </footer>
 
     <script>
