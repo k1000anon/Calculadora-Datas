@@ -5,69 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Datas</title>
     <style>
+        /* Estilos gerais */
         body {
             font-family: Arial, sans-serif;
-            margin: 30px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+            background-color: #f4f4f4;
         }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px; /* Espaço para o rodapé */
+        }
+
         input, button {
             padding: 10px;
             margin: 10px 0;
             font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ddd;
         }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
         #result {
             margin-top: 20px;
             font-weight: bold;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            display: none;
         }
+
         table, th, td {
             border: 1px solid #ddd;
         }
+
         th, td {
             padding: 10px;
             text-align: center;
         }
+
+        /* Rodapé */
+        footer {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px; /* Distância do conteúdo */
+            width: 100%;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
 
-    <h1>Calculadora de Datas</h1>
+    <div class="container">
+        <h1>Calculadora de Datas</h1>
 
-    <h2>Calcular Diferença entre Duas Datas</h2>
-    <label for="date1">Data Inicial:</label>
-    <input type="date" id="date1">
-    <label for="date2">Data Final:</label>
-    <input type="date" id="date2">
-    <button onclick="calcularDiferenca()">Calcular Diferença</button>
+        <h2>Calcular Diferença entre Duas Datas</h2>
+        <label for="date1">Data Inicial:</label>
+        <input type="date" id="date1">
+        <label for="date2">Data Final:</label>
+        <input type="date" id="date2">
+        <button onclick="calcularDiferenca()">Calcular Diferença</button>
 
-    <div id="result"></div>
+        <div id="result"></div>
 
-    <h3>Diferença em várias unidades:</h3>
-    <table id="resultTable" style="display:none;">
-        <tr>
-            <th>Unidade</th>
-            <th>Valor</th>
-        </tr>
-        <tr>
-            <td>Dias</td>
-            <td id="days"></td>
-        </tr>
-        <tr>
-            <td>Semanas</td>
-            <td id="weeks"></td>
-        </tr>
-        <tr>
-            <td>Meses</td>
-            <td id="months"></td>
-        </tr>
-        <tr>
-            <td>Anos</td>
-            <td id="years"></td>
-        </tr>
-    </table>
+        <h3>Diferença em várias unidades:</h3>
+        <table id="resultTable">
+            <tr>
+                <th>Unidade</th>
+                <th>Valor</th>
+            </tr>
+            <tr>
+                <td>Dias</td>
+                <td id="days"></td>
+            </tr>
+            <tr>
+                <td>Semanas</td>
+                <td id="weeks"></td>
+            </tr>
+            <tr>
+                <td>Meses</td>
+                <td id="months"></td>
+            </tr>
+            <tr>
+                <td>Anos</td>
+                <td id="years"></td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        k1000 <br> <br>
+01/01/2025
+</br> <br>
+    </footer>
 
     <script>
         // Função para formatar os números com vírgulas
@@ -101,7 +158,6 @@
             document.getElementById("months").textContent = formatNumber(diffMonths);
             document.getElementById("years").textContent = formatNumber(diffYears);
         }
-
     </script>
 
 </body>
